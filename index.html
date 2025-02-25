@@ -1,0 +1,146 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome libirary -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="images/logo.png">
+    <title>GPA Calculator</title>
+</head>
+
+<body>
+    <!-- Start of the header -->
+    <div class="header">
+        <img src="images/logo.png" alt="" class="bidt-logo">
+        <h1 class="welcome-text">BIDT - GPA Calculator</h1>
+    </div>
+    <!-- End of header -->
+    <!-- Start of container -->
+    <div class="container">
+        <div class="content">
+            <!-- Every Subject -->
+            <div class="all-subject">
+                <div class="subject">Computer Skills</div>
+                <div class="grade" id="grade1">A+ <i class="fa-solid fa-caret-down"></i>
+                    <ul class="drop-down">
+                        <li class="drop-item">A+</li>
+                        <li class="drop-item">A</li>
+                        <li class="drop-item">B+</li>
+                        <li class="drop-item">B</li>
+                        <li class="drop-item">C+</li>
+                        <li class="drop-item">C</li>
+                        <li class="drop-item">D+</li>
+                        <li class="drop-item">D</li>
+                        <li class="drop-item">F</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="all-subject">
+                <div class="subject">Microeconomics</div>
+                <div class="grade" id="grade2">A+ <i class="fa-solid fa-caret-down"></i>
+                    <ul class="drop-down">
+                        <li class="drop-item">A+</li>
+                        <li class="drop-item">A</li>
+                        <li class="drop-item">B+</li>
+                        <li class="drop-item">B</li>
+                        <li class="drop-item">C+</li>
+                        <li class="drop-item">C</li>
+                        <li class="drop-item">D+</li>
+                        <li class="drop-item">D</li>
+                        <li class="drop-item">F</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="all-subject">
+                <div class="subject">Financial Accounting 1</div>
+                <div class="grade" id="grade3">A+ <i class="fa-solid fa-caret-down"></i>
+                    <ul class="drop-down">
+                        <li class="drop-item">A+</li>
+                        <li class="drop-item">A</li>
+                        <li class="drop-item">B+</li>
+                        <li class="drop-item">B</li>
+                        <li class="drop-item">C+</li>
+                        <li class="drop-item">C</li>
+                        <li class="drop-item">D+</li>
+                        <li class="drop-item">D</li>
+                        <li class="drop-item">F</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="all-subject">
+                <div class="subject">Management</div>
+                <div class="grade" id="grade4">A+ <i class="fa-solid fa-caret-down"></i>
+                    <ul class="drop-down">
+                        <li class="drop-item">A+</li>
+                        <li class="drop-item">A</li>
+                        <li class="drop-item">B+</li>
+                        <li class="drop-item">B</li>
+                        <li class="drop-item">C+</li>
+                        <li class="drop-item">C</li>
+                        <li class="drop-item">D+</li>
+                        <li class="drop-item">D</li>
+                        <li class="drop-item">F</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="all-subject">
+                <div class="subject">IT</div>
+                <div class="grade" id="grade5">A+ <i class="fa-solid fa-caret-down"></i>
+                    <ul class="drop-down">
+                        <li class="drop-item">A+</li>
+                        <li class="drop-item">A</li>
+                        <li class="drop-item">B+</li>
+                        <li class="drop-item">B</li>
+                        <li class="drop-item">C+</li>
+                        <li class="drop-item">C</li>
+                        <li class="drop-item">D+</li>
+                        <li class="drop-item">D</li>
+                        <li class="drop-item">F</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="all-subject">
+                <div class="subject">Academic Reading and Writing 1</div>
+                <div class="grade" id="grade6">A+ <i class="fa-solid fa-caret-down"></i>
+                    <ul class="drop-down">
+                        <li class="drop-item">A+</li>
+                        <li class="drop-item">A</li>
+                        <li class="drop-item">B+</li>
+                        <li class="drop-item">B</li>
+                        <li class="drop-item">C+</li>
+                        <li class="drop-item">C</li>
+                        <li class="drop-item">D+</li>
+                        <li class="drop-item">D</li>
+                        <li class="drop-item">F</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="all-subject">
+                <div class="subject">Mathematics for Business</div>
+                <div class="grade" id="grade7">A+ <i class="fa-solid fa-caret-down"></i>
+                    <ul class="drop-down">
+                        <li class="drop-item">A+</li>
+                        <li class="drop-item">A</li>
+                        <li class="drop-item">B+</li>
+                        <li class="drop-item">B</li>
+                        <li class="drop-item">C+</li>
+                        <li class="drop-item">C</li>
+                        <li class="drop-item">D+</li>
+                        <li class="drop-item">D</li>
+                        <li class="drop-item">F</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Calculate button -->
+            <div class="btn">Calculate</div>
+            <!-- Display the total GPA -->
+            <div class="total-gpa">Total GPA : <span id="GPA">0.00</span> (<span id="degree">--</span>)</div>
+        </div>
+    </div>
+    <!-- End of container -->
+    <script src="main.js"></script>
+</body>
+
+</html>
