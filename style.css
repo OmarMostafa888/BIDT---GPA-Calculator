@@ -16,6 +16,7 @@ body {
   flex-direction: column;
   margin: 0;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .header {
@@ -36,11 +37,12 @@ body {
 
 .container {
   background-color: var(--primary);
-  width: 30rem;
+  width: 32rem;
   padding: 25px;
   border-radius: 15px;
   display: flex;
   justify-content: center;
+  user-select: none;
 }
 
 .all-subject {
@@ -60,7 +62,7 @@ body {
 
 .grade {
   background-color: var(--gray);
-  width: 5rem;
+  width: 7rem;
   height: 2rem;
   border-radius: 5px;
   text-align: center;
@@ -74,8 +76,17 @@ body {
   transition: 0.3s;
 }
 
+.grade p {
+  margin: 0;
+  margin-right: 5px;
+  padding: 0;
+  display: inline;
+  font-size: 1rem;
+}
+
 .grade i {
   transition: 0.3s;
+  color: rgba(34, 34, 34, 0.719);
 }
 
 .grade:hover {
@@ -93,6 +104,7 @@ body {
   padding: 1rem;
   text-align: center;
   margin-top: 2rem;
+  user-select: text;
 }
 
 .total-gpa span {
@@ -129,7 +141,7 @@ body {
   display: flex;
   flex-direction: column;
   position: absolute;
-  width: 5rem;
+  width: 7rem;
   border-radius: 5px;
   padding: 0;
   align-items: center;
@@ -159,9 +171,9 @@ body {
   transform: rotate(180deg);
 }
 
-@media (max-width: 518px) {
+@media (max-width: 565px) {
   .container {
-    width: 22rem;
+    width: 24rem;
   }
   .subject {
     width: 13rem;

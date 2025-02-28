@@ -1,19 +1,11 @@
 // Get the grades
-const cs = document.getElementById("grade1");
-const me = document.getElementById("grade2");
-const fa = document.getElementById("grade3");
-const man = document.getElementById("grade4");
-const it = document.getElementById("grade5");
-const acad = document.getElementById("grade6");
-const ma = document.getElementById("grade7");
-let allGrades = document.getElementsByClassName("grade");
+let allGrades = document.getElementsByClassName("grade").innerText;
 // Get the GPA
 const totalGPA = document.getElementById("GPA");
 const totalDeg = document.getElementById("degree");
 ////////////////////////////////////////////////////////////////////
-
 // Grades Map
-const gradesmap = {
+const gm = {
   "A+": 4,
   A: 3.75,
   "B+": 3.4,
@@ -27,61 +19,90 @@ const gradesmap = {
 
 // Drop down menu
 let gradeMenu = document.querySelectorAll(".grade");
+gradeMenu.forEach((e) => {});
 gradeMenu.forEach(function (ele) {
+  if (ele.firstElementChild.textContent === "Grade") {
+    ele.firstElementChild.style = "color:#808080";
+  }
   ele.addEventListener("click", function (e) {
-    e.stopPropagation();
-    e.target.lastElementChild.classList.toggle("active-grade");
-    e.target.firstElementChild.classList.toggle("rotate180");
+    // e.stopPropagation();
+    e.currentTarget.lastElementChild.classList.toggle("active-grade");
+    e.currentTarget.children[1].classList.toggle("rotate180");
   });
 });
 
 // Choose item form drop down menu
-let activeGrade = document.getElementsByClassName("active-grade");
+document.addEventListener(
+  "click",
+  function (e) {
+    if (e.target.matches(".active-grade li")) {
+      document.querySelector(
+        ".active-grade"
+      ).parentElement.children[0].innerText = e.target.innerText;
+      document.querySelector(".active-grade").parentElement.children[0].style =
+        "color:black";
+    }
+  },
+  { capture: true }
+);
 
-// Calculate Grades function
-function gpaCalc() {
-  let totalPoints = 0;
-  for (let i = 0; i > allGrades.length; i++) {
-    console.log(allGrades[i]);
+// Calculate Grades Function
+document.addEventListener("click", function (e) {
+  if (e.target.matches(".btn")) {
+    let cs = document.getElementById("grade1").firstElementChild.textContent;
+    let me = document.getElementById("grade2").firstElementChild.textContent;
+    let fa = document.getElementById("grade3").firstElementChild.textContent;
+    let man = document.getElementById("grade4").firstElementChild.textContent;
+    let it = document.getElementById("grade5").firstElementChild.textContent;
+    let acad = document.getElementById("grade6").firstElementChild.textContent;
+    let ma = document.getElementById("grade7").firstElementChild.textContent;
+    let myGpa =
+      (gm[cs] * 3 +
+        gm[me] * 3 +
+        gm[fa] * 3 +
+        gm[man] * 3 +
+        gm[it] * 3 +
+        gm[acad] * 3 +
+        gm[ma] * 3) /
+      21;
+    totalGPA.innerText = myGpa.toFixed(2);
+    function degreeCalc() {
+      if (myGpa === 4) {
+        let myDegree = "A+";
+        return myDegree;
+      } else if (myGpa >= 3.75) {
+        let myDegree = "A";
+        return myDegree;
+      } else if (myGpa >= 3.4) {
+        let myDegree = "B+";
+        return myDegree;
+      } else if (myGpa >= 3.1) {
+        let myDegree = "B";
+        return myDegree;
+      } else if (myGpa >= 2.8) {
+        let myDegree = "C+";
+        return myDegree;
+      } else if (myGpa >= 2.5) {
+        let myDegree = "C";
+        return myDegree;
+      } else if (myGpa >= 2.25) {
+        let myDegree = "D+";
+        return myDegree;
+      } else if (myGpa >= 2) {
+        let myDegree = "D";
+        return myDegree;
+      } else {
+        totalDeg.style.color = "red";
+        totalGPA.style.color = "red";
+        let myDegree = "F";
+        return myDegree;
+      }
+    }
+    totalDeg.innerText = degreeCalc();
   }
-
-  let myGpa = (4 * 3 + 4 * 3 + 4 * 3 + 4 * 3 + 4 * 3 + 4 * 3 + 4 * 3) / 21;
-  return myGpa.toFixed(2);
-}
+});
 
 // Degree Calculate function
-function degreeCalc() {
-  if (gpaCalc() === (4).toFixed(2)) {
-    let myDegree = "A+";
-    return myDegree;
-  } else if (gpaCalc() >= 3.75) {
-    let myDegree = "A";
-    return myDegree;
-  } else if (gpaCalc() >= 3.4) {
-    let myDegree = "B+";
-    return myDegree;
-  } else if (gpaCalc() >= 3.1) {
-    let myDegree = "B";
-    return myDegree;
-  } else if (gpaCalc() >= 2.8) {
-    let myDegree = "C+";
-    return myDegree;
-  } else if (gpaCalc() >= 2.5) {
-    let myDegree = "C";
-    return myDegree;
-  } else if (gpaCalc() >= 2.25) {
-    let myDegree = "D+";
-    return myDegree;
-  } else if (gpaCalc() >= 2) {
-    let myDegree = "D";
-    return myDegree;
-  } else {
-    totalDeg.style.color = "red";
-    totalGPA.style.color = "red";
-    let myDegree = "F";
-    return myDegree;
-  }
-}
 
-totalGPA.innerText = gpaCalc();
-totalDeg.innerText = degreeCalc();
+// totalGPA.innerText = gpaCalc();
+// totalDeg.innerText = degreeCalc();
