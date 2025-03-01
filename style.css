@@ -130,11 +130,6 @@ body {
   background-color: #c5c5c5;
 }
 
-.grade:hover i,
-.grade:active i {
-  /* transform: rotate(180deg); */
-}
-
 .total-gpa {
   color: white;
   background-color: #393e46;
@@ -177,8 +172,7 @@ body {
   -ms-transition: 0.2s;
 }
 
-.btn:hover,
-.btn:active {
+.btn:hover {
   background-color: #353a41;
   transform: scale(1.03);
   -webkit-transform: scale(1.03);
@@ -217,8 +211,7 @@ body {
   padding-top: 5px;
 }
 
-.drop-item:hover,
-.drop-down:active {
+.drop-item:hover{
   background-color: #c5c5c5;
 }
 
