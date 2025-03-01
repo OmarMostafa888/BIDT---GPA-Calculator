@@ -4,25 +4,45 @@
 }
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 body {
   background-color: #222831;
   font-family: sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   margin: 0;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  /* touch-action: manipulation; So i can make :active work */
 }
 
 .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -40,12 +60,21 @@ body {
   width: 32rem;
   padding: 25px;
   border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 
 .all-subject {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-bottom: 0.9rem;
 }
@@ -56,6 +85,7 @@ body {
   height: 2rem;
   border-radius: 5px;
   text-align: center;
+  -ms-flex-line-pack: center;
   align-content: center;
   margin-right: 2rem;
 }
@@ -66,13 +96,18 @@ body {
   height: 2rem;
   border-radius: 5px;
   text-align: center;
+  -ms-flex-line-pack: center;
   align-content: center;
   cursor: pointer;
   /* display: flex;
   justify-content: space-between; */
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding-right: 1rem;
   padding-left: 1.5rem;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -85,6 +120,8 @@ body {
 }
 
 .grade i {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
   color: rgba(34, 34, 34, 0.719);
 }
@@ -93,7 +130,8 @@ body {
   background-color: #c5c5c5;
 }
 
-.grade:hover i {
+.grade:hover i,
+.grade:active i {
   /* transform: rotate(180deg); */
 }
 
@@ -104,6 +142,9 @@ body {
   padding: 1rem;
   text-align: center;
   margin-top: 2rem;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
   user-select: text;
 }
 
@@ -122,30 +163,51 @@ body {
   width: 30%;
   height: 2.5rem;
   text-align: center;
+  -ms-flex-line-pack: center;
   align-content: center;
   cursor: pointer;
+  -ms-grid-column-align: center;
   justify-self: center;
   border-radius: 15px;
   margin-top: 30px;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
   transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
 }
 
-.btn:hover {
-  background-color: #414448;
-  width: 31%;
+.btn:hover,
+.btn:active {
+  background-color: #353a41;
+  transform: scale(1.03);
+  -webkit-transform: scale(1.03);
+  -moz-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  -o-transform: scale(1.03);
 }
 
 .drop-down {
   list-style: none;
   background-color: var(--gray);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   position: absolute;
   width: 7rem;
   border-radius: 5px;
   padding: 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-shadow: 0 0.5rem 1rem #00000058;
   box-shadow: 0 0.5rem 1rem #00000058;
+  -webkit-transform: translate(-1.5rem, -0.5rem);
+  -ms-transform: translate(-1.5rem, -0.5rem);
   transform: translate(-1.5rem, -0.5rem);
   display: none;
 }
@@ -155,7 +217,8 @@ body {
   padding-top: 5px;
 }
 
-.drop-item:hover {
+.drop-item:hover,
+.drop-down:active {
   background-color: #c5c5c5;
 }
 
@@ -168,6 +231,8 @@ body {
 }
 
 .rotate180 {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
@@ -206,4 +271,3 @@ body {
     font-size: 0.8rem;
   }
 }
-
