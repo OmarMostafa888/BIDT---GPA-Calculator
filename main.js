@@ -69,27 +69,43 @@ document.addEventListener("click", function (e) {
     function degreeCalc() {
       if (myGpa === 4) {
         let myDegree = "A+";
+        totalDeg.style.color = "#00dc25";
+        totalGPA.style.color = "#00dc25";
         return myDegree;
       } else if (myGpa >= 3.75) {
         let myDegree = "A";
+        totalDeg.style.color = "#00dc25";
+        totalGPA.style.color = "#00dc25";
         return myDegree;
       } else if (myGpa >= 3.4) {
         let myDegree = "B+";
+        totalDeg.style.color = "#00dc25";
+        totalGPA.style.color = "#00dc25";
         return myDegree;
       } else if (myGpa >= 3.1) {
         let myDegree = "B";
+        totalDeg.style.color = "#00dc25";
+        totalGPA.style.color = "#00dc25";
         return myDegree;
       } else if (myGpa >= 2.8) {
         let myDegree = "C+";
+        totalDeg.style.color = "#00dc25";
+        totalGPA.style.color = "#00dc25";
         return myDegree;
       } else if (myGpa >= 2.5) {
         let myDegree = "C";
+        totalDeg.style.color = "#00dc25";
+        totalGPA.style.color = "#00dc25";
         return myDegree;
       } else if (myGpa >= 2.25) {
         let myDegree = "D+";
+        totalDeg.style.color = "#00dc25";
+        totalGPA.style.color = "#00dc25";
         return myDegree;
       } else if (myGpa >= 2) {
         let myDegree = "D";
+        totalDeg.style.color = "#00dc25";
+        totalGPA.style.color = "#00dc25";
         return myDegree;
       } else {
         totalDeg.style.color = "red";
